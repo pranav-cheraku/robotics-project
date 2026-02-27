@@ -10,12 +10,10 @@ model.info()
 
 
 # Train the model on the COCO8 example dataset for 100 epochs
-results = model.train(data="dataset/train", epochs=100, imgsz=640)
+results = model.train(data="puckDataset/data.yaml", 
+                      epochs=50, imgsz=640, batch=16)
 
 
-# Test loop
-# Run inference with the YOLOv8n model on the 'bus.jpg' image
-results = model("path/to/bus.jpg")
 
 
 # save model
