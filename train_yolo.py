@@ -6,11 +6,10 @@ model = YOLO("yolov8n.pt")
 # Display model information (optional)
 model.info()
 
-# Load data
 
 
 # Train the model on the COCO8 example dataset for 100 epochs
-results = model.train(data="puckDataset/data.yaml", 
+results = model.train(data="Dataset/data.yaml", 
                       epochs=50, imgsz=640, batch=16)
 
 
