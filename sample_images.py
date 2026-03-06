@@ -5,7 +5,7 @@ import os
 import random
 import shutil
 
-ROOT = "ClassesDataset/"
+ROOT = "RawData/TennisBall"
 TRAIN_PATH = os.path.join(ROOT, "train")
 VAL_PATH = os.path.join(ROOT, "valid")
 TEST_PATH = os.path.join(ROOT, "test")
@@ -65,21 +65,20 @@ def sample_roomba_images(source_dir, dest_dir, num_samples):
     copy_files(sampled_background_files, source_dir, os.path.join(dest_dir, "background"))
 
 
-def sample_images(source_dir, dest_dir, num_samples, class_name):
+def sample_images(source_dir, dest_dir, num_samples):
     all_files = get_image_label_pairs(source_dir)
 
    
     random.shuffle(all_files)  # Randomize the order of puck files
     sampled_puck_files = all_files[:num_samples]
 
-    copy_files(sampled_puck_files, source_dir, os.path.join(dest_dir, class_name))
+    copy_files(sampled_puck_files, source_dir, dest_dir)
     
 
 
 if __name__ == "__main__":
-    classes = ["pucks", "roomba", "background"]
-    for cls in classes:
-        copy_all_files(os.path.join(TRAIN_PATH, cls), "Dataset/train")
-        copy_all_files(os.path.join(VAL_PATH, cls), "Dataset/valid")
-        copy_all_files(os.path.join(TEST_PATH, cls), "Dataset/test")
+
+    copy_all_files(TRAIN_PATH, "Dataset/train")
+    copy_all_files(VAL_PATH, "Dataset/valid")
+    copy_all_files(TEST_PATH, "Dataset/test")
     
