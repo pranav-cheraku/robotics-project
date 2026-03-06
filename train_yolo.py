@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 # Load a COCO-pretrained YOLOv8n model
-model = YOLO("yolov8n.pt")
+model = YOLO("runs/detect/train6/weights/best.pt")
 
 # Display model information (optional)
 model.info()
