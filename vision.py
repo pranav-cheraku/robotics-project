@@ -45,7 +45,7 @@ def move_robot():
     # robot_busy = True
     robot.play()
 
-puck_model = YOLO("runs/detect/train6/weights/best.pt")
+puck_model = YOLO("runs/detect/train7/weights/best.pt")
 DISPLAY_COLOR = (255, 0, 0)
 
 
