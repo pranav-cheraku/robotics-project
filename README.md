@@ -30,3 +30,15 @@ The system follows a **Sense → Think → Act** pipeline:
 - The robot translates BLE commands into ROS 2 actions internally
 - Movement is constrained to a single axis (left/right along the goal line), reducing complexity and error
 
+## Hardware
+
+- **Robot:** iRobot Create 3
+- **Camera:** Smartphone mounted on top of the Roomba
+- **Ball:** Tennis ball (switched from hockey puck due to detection difficulties)
+
+## Software & Tools
+
+- **Python SDK** — communicates with the Create 3 over BLE
+- **OpenCV** — processes video frames for object detection
+- **Roboflow** — model training and dataset management
+- **ROS 2** — underlying robot operating system (accessed indirectly through the SDK)
